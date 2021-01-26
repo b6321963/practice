@@ -1,0 +1,20 @@
+fname=input('Enter a file name')
+plist = []
+try:
+    fhand=open(fname+'.txt')
+except:
+    print('you bad')
+    quit()  
+for line in fhand:
+    line=line.rstrip()
+    word = line.split()
+    if len(line) < 3:
+        continue
+    if word[0] != 'From':
+        continue
+    email = word[1]
+    plist.append(email) 
+    
+for p in range(len(plist)):
+    print(plist[p])
+print('There were ',len(plist) , ' lines in the file with From as the first word')
