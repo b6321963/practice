@@ -1,0 +1,5 @@
+str = 'X-DSPAM-Confidence:0.8475'
+
+cpos = str.find(':')
+num = str[cpos+1:]
+print(num)
