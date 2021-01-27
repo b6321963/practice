@@ -1,0 +1,18 @@
+fname=input('Pleae enter file name')
+try:
+    handler=open(fname+'.txt')
+except:
+    print("bad name")
+    quit()
+count = dict()
+for line in handler:
+    words = line.split()
+    for wrd in words:
+        count[wrd]=count.get(wrd,0)+1
+        
+for k,v in count.items():        
+    print(k,v)
+for k,v in count.items():        
+    if v==max(count.values()):
+        print('The max is',k,'',v)
+    
